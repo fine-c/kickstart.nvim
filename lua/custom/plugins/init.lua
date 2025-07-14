@@ -4,12 +4,6 @@
 -- See the kickstart.nvim README for more information
 return {
   {
-    'unblevable/quick-scope',
-    dependencies = {
-      'quick-scope',
-    },
-  },
-  {
     'justinmk/vim-sneak',
     dependencies = {
       'vim-sneak',
