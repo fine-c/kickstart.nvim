@@ -205,13 +205,25 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+-- 将'jk'组合键映射为'<Ecs>'键
+vim.keymap.set('i', 'jk', '<Esc>', { noremap = true, silent = true })
+
+-- 自定义导航键
+vim.keymap.set('n', 'H', '^', { noremap = true, silent = true })
+vim.keymap.set('n', 'L', '$', { noremap = true, silent = true })
+vim.keymap.set('n', 'J', '}', { noremap = true, silent = true })
+vim.keymap.set('n', 'K', '{', { noremap = true, silent = true })
+vim.keymap.set('v', 'H', '^', { noremap = true, silent = true })
+vim.keymap.set('v', 'L', '$', { noremap = true, silent = true })
+vim.keymap.set('v', 'J', '}', { noremap = true, silent = true })
+vim.keymap.set('v', 'K', '{', { noremap = true, silent = true })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.hl.on_yank()`
-
 vim.api.nvim_set_hl(0, 'TextYankHighlight', {
   bg = '#39C5BB',
   fg = '#D8E3E7',
@@ -1020,8 +1032,7 @@ require('lazy').setup({
   },
 })
 
+require 'neovide'
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-
-require 'options'
-require 'neovide'
