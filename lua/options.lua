@@ -12,7 +12,6 @@ vim.keymap.set('n', 'H', '^', { noremap = true, silent = true })
 vim.keymap.set('n', 'L', '$', { noremap = true, silent = true })
 vim.keymap.set('n', 'J', '}', { noremap = true, silent = true })
 vim.keymap.set('n', 'K', '{', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>nh', ':noh<CR>', { silent = true, desc = '取消搜索高亮' })
 
 vim.keymap.set('v', 'H', '^', { noremap = true, silent = true })
 vim.keymap.set('v', 'L', '$', { noremap = true, silent = true })
