@@ -217,6 +217,10 @@ vim.keymap.set('v', 'H', '^', { noremap = true, silent = true })
 vim.keymap.set('v', 'L', '$', { noremap = true, silent = true })
 vim.keymap.set('v', 'J', '}', { noremap = true, silent = true })
 vim.keymap.set('v', 'K', '{', { noremap = true, silent = true })
+vim.keymap.set('o', 'H', '^', { noremap = true, silent = true })
+vim.keymap.set('o', 'L', '$', { noremap = true, silent = true })
+vim.keymap.set('o', 'J', '}', { noremap = true, silent = true })
+vim.keymap.set('o', 'K', '{', { noremap = true, silent = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
