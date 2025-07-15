@@ -18,17 +18,3 @@ vim.keymap.set('v', 'H', '^', { noremap = true, silent = true })
 vim.keymap.set('v', 'L', '$', { noremap = true, silent = true })
 vim.keymap.set('v', 'J', '}', { noremap = true, silent = true })
 vim.keymap.set('v', 'K', '{', { noremap = true, silent = true })
-
-vim.api.nvim_set_hl(0, 'CopyYankHighlight', {
-  bg = '#39C5BB',
-  fg = '#D8E3E7',
-})
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.hl.on_yank {
-      higroup = 'CopyYankHighlight',
-      timeout = 500,
-      on_visual = true,
-    }
-  end,
-})

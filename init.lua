@@ -211,11 +211,19 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.hl.on_yank()`
+
+vim.api.nvim_set_hl(0, 'TextYankHighlight', {
+  bg = '#39C5BB',
+  fg = '#D8E3E7',
+})
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
-    vim.hl.on_yank()
+    vim.hl.on_yank {
+      higroup = 'TextYankHighlight',
+      timeout = 500,
+    }
   end,
 })
 
