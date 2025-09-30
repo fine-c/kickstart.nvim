@@ -59,6 +59,9 @@ return {
   {
     'brenton-leighton/multiple-cursors.nvim',
     opts = {},
+    enabled = function()
+      return not vim.g.vscode
+    end,
     keys = {
       { '<C-j>', '<Cmd>MultipleCursorsAddDown<CR>', mode = { 'n', 'x' }, desc = 'Add cursor and move down' },
       { '<C-k>', '<Cmd>MultipleCursorsAddUp<CR>', mode = { 'n', 'x' }, desc = 'Add cursor and move up' },
