@@ -171,6 +171,15 @@ vim.o.confirm = true
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- 普通/可视/操作符模式下的键位映射
+vim.keymap.set({ 'n', 'v', 'o' }, 'H', '^', { desc = 'Go to first non-blank character' })
+vim.keymap.set({ 'n', 'v', 'o' }, 'L', '$', { desc = 'Go to end of line' })
+vim.keymap.set({ 'n', 'v', 'o' }, 'J', '}', { desc = 'Jump to next paragraph' })
+vim.keymap.set({ 'n', 'v', 'o' }, 'K', '{', { desc = 'Jump to previous paragraph' })
+
+-- 插入模式下 jk 退出到普通模式
+vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
+
 -- Diagnostic Config & Keymaps
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config {
